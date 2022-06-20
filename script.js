@@ -6,9 +6,9 @@ const rownosc = document.querySelector('.rownosc')
 const wynikiPoprzednie = document.querySelector('.poprzednie-dzialanie')
 const wynikiAktualne = document.querySelector('.aktualne-dzialanie')
 
-let aktualneDzialanie = ''
-let poprzednieDzialanie = ''
-let operacja = undefined
+var aktualneDzialanie = ''
+var poprzednieDzialanie = ''
+var operacja = undefined
 
 const oblicz = () => {
     let dzialanie
@@ -24,32 +24,32 @@ const oblicz = () => {
     switch(operacja) {
         case '+':
             dzialanie = poprzednie + aktualne
-           break;
+           break
            case '-':
-            działanie = poprzednie - aktualne
-            break;
+            dzialanie = poprzednie - aktualne
+            break
                case '×':
-            działanie = poprzednie * aktualne
+            dzialanie = poprzednie * aktualne
             break;
                case ':':
-            działanie = poprzednie / aktualne
-            break;
+            dzialanie = poprzednie / aktualne
+            break
                case '√':
-            działanie = Math.pow(poprzednie, 1/aktualny)
-            break;
+            dzialanie = Math.pow(poprzednie, 1/aktualny)
+            break
                case '%':
-            działanie = poprzednie / 100 * aktualne
-            break;
+            dzialanie = poprzednie / 100 * aktualne
+            break
                case '^':
-            działanie = Math.pow(poprzednie, aktualne)
-            break;
+            dzialanie = Math.pow(poprzednie, aktualne)
+            break
                case 'log':
-            działanie = Math.log(poprzednie) / Math.log(aktualne)
-            break;
-
+            dzialanie = Math.log(poprzednie) / Math.log(aktualne)
+            break
             default:
-                return 
+                return ;
     }
+    
     aktualneDzialanie = dzialanie
     operacja = undefined
     poprzednieDzialanie = ''
@@ -64,7 +64,7 @@ const wybierzOperacje = (operator) => {
     }
     operacja = operator
     poprzednieDzialanie = aktualneDzialanie
-    aktualneDzialane = ''
+    aktualneDzialanie = ''
 }
 
 const zaktualizujWynik = () => {
@@ -86,7 +86,7 @@ const dodajLiczbe = (liczba) => {
 }
 const usunLiczbe = () => {
     aktualneDzialanie = aktualneDzialanie.slice(0, -1)
-}
+};
 
 liczby.forEach((liczba) => {
     liczba.addEventListener('click', () => {
@@ -97,7 +97,7 @@ liczby.forEach((liczba) => {
 usun.addEventListener('click', () => {
     usunLiczbe()
     zaktualizujWynik()
-})
+});
 operatory.forEach((operator) =>
 {
     operator.addEventListener('click', () => {
@@ -105,3 +105,7 @@ operatory.forEach((operator) =>
         zaktualizujWynik()
     })
 });
+rownosc.addEventListener('click', () => {
+    oblicz()
+    zaktualizujWynik()
+})
