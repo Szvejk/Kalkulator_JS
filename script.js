@@ -18,7 +18,7 @@ const oblicz = () => {
     const poprzednie = parseFloat(poprzednieDzialanie)
     const aktualne = parseFloat(aktualneDzialanie)
 
-    if(isNaN(poprzednie) || isNan(aktualne)) {
+    if(isNaN(poprzednie) || isNaN(aktualne)) {
         return
     }
     switch(operacja) {
