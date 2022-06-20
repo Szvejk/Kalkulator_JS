@@ -1,0 +1,7 @@
+const liczby = document.querySelectorAll('.liczba')
+const operatory = document.querySelectorAll('.operator')
+const wyczysc = document.querySelector('.wyczysc')
+const usun = document.querySelector('.usun')
+const rownosc = document.querySelector('.rownosc')
+const wynikiPoprzednie = document.querySelector('.poprzednie-dzialanie')
+const wynikiAktualne = document.querySelector('.aktualne-dzialanie')
